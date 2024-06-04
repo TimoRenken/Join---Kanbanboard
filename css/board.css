@@ -1,0 +1,395 @@
+.board-top-container, .board-columns-container, #no-results {
+    padding: 0 96px;
+    max-width: 1688px;
+}
+
+.board-top-container {
+    position: relative;
+    height: 232px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3.2rem;
+}
+
+.board-actions-container {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+#board-search-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 312px;
+    height: 48px;
+    border: 1px solid #A8A8A8;
+}
+
+#board-search-input:focus {
+    outline: none;
+    border: 1px solid var(--color-accent);
+}
+
+#board-search-input::placeholder {
+    transform: translateY(2px);
+}
+
+.board-search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    right: 16px;
+}
+
+.large-board-add-task-button-mobile-container {
+    height: 40px;
+    width: 40px;
+    background-color: var(--color-menu);
+    border-radius: 10px;
+    display: none;
+}
+
+.add-task-button-tablet {
+    display: none;
+}
+
+.board-columns-container {
+    margin-bottom: 96px;
+}
+
+#no-results {
+    display: none;
+}
+
+.board-columns-container, #board-column-headers-container-desktop {
+    display: flex;
+    justify-content: space-between;
+}
+
+#board-column-headers-container-desktop {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 8px;
+}
+
+.board-column {
+    width: 252px;
+}
+
+.board-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-column-header-mobile {
+    margin-top: 0;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.board-column-heading-desktop {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.board-column-heading-mobile {
+    margin: 0;
+    font-size: 27px;
+}
+
+.board-column-tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    min-height: 252px;
+}
+
+.drop-area-highlight {
+    outline: 1px solid #A8A8A8;
+    border-radius: 10px;
+    outline-style: dashed;
+}
+
+.no-tasks-message {
+    background-color: #E7E7E7;
+    color: #A8A8A8;
+    border: 1px solid #A8A8A8;
+    box-shadow: 0px 0px 4px 0px #00000029;
+    border-radius: 10px;
+    border-style: dashed;
+    height: 48px;
+    width: 252px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background-color: #FFFFFF;
+    width: 252px;
+    min-width: 252px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0px 0px 10px 3px #00000014;
+    cursor: pointer;
+    word-break: break-word;
+    transition: transform 125ms;
+}
+
+.rotate-task {
+    transform: rotate(5deg);
+}
+
+.task-title-and-description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-category, .task-title, .task-description {
+    font-size: 16px;
+}
+
+.task-category, .task-description {
+    font-weight: 400;
+}
+
+.task-category-and-mobile-drag-arrows-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.move-arrows {
+    font-size: 20px;
+    height: 32px;
+    width: 32px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-category {
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.task-category-small {
+    border-radius: 8px;
+    padding: 4px 16px;
+}
+
+.user-story {
+    background: #0038FF;
+}
+
+.technical-task {
+    background: #1FD7C1;
+}
+
+.task-title {
+    font-weight: 700;
+}
+
+.task-description {
+    color: #A8A8A8;
+}
+
+.task-progress-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 12px;
+}
+
+.task-progress {
+    width: 128px;
+    height: 8px;
+    border: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #F4F4F4;
+    border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #4589FF;
+    border-radius: 16px;
+}
+
+.subtask-tooltip {
+    color: #FFFFFF;
+    background-color: #4589FF;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 3px #00000014;
+    position: absolute;
+    top: 26px;
+    right: 0;
+    visibility: hidden;
+}
+
+.task-progress-container:hover .subtask-tooltip {
+    visibility: visible;
+}
+
+.initial-avatars-and-priority-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#initial-avatars {
+    color: #A8A8A8;
+    display: flex;
+}
+
+.pop-up-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.medium-pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 525px;
+    padding: 48px 40px;
+}
+
+.pop-up {
+    background-color: #FFFFFF;
+    display: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(100%, -50%);
+    transition: transform 125ms;
+}
+
+.center-pop-up {
+    transform: translate(-50%, -50%);
+}
+
+.close-pop-up-icon {
+    cursor: pointer;
+}
+
+.close-add-task-pop-up-icon {
+    z-index: 3;
+    position: absolute;
+    top: 64px;
+    right: 40px;
+}
+
+#open-task-pop-up {
+    max-height: 98%;
+}
+
+.move-task-pop-up-header, .open-task-pop-up-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.open-task-pop-up-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4.32px;
+}
+
+/* This deviates from the layout in Figma but a scrollbar was not considered in Figma */
+.open-task-pop-up-content h2 {
+    font-size: 47px;
+}
+
+.open-task-buttons-container, .open-task-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-task-buttons-container {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.open-task-button {
+    justify-content: center;
+}
+
+.edit-task-button {
+    display: flex;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+}
+
+.edit-task-button img {
+    object-fit: scale-down;
+}
+
+.edit-task-assigned-to-container {
+    width: 100%;
+}
+
+.open-task-buttons-container {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.open-task-button-separator {
+    height: 24px;
+    border: 1px solid #D1D1D1;
+}
+
+.open-task-due-date-outer-container, .open-task-priority-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+#open-task-priority {
+    padding: 4px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

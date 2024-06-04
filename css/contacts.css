@@ -1,0 +1,364 @@
+.contact-link {
+    font-size: 19px;
+    color: hsla(209, 100%, 47%, 1);
+    word-break: break-word;
+}
+
+.contacts-content-container {
+    display: flex;
+}
+
+.contacts-left-side {
+    min-height: calc(100vh - 96px);
+    overflow-y: auto;
+    position: relative;
+    background-color: #FFFFFF;
+    width: 456px;
+    box-shadow: 4px 0px 6px 0px #00000014;
+}
+
+.add-contact-button-container {
+    z-index: 2;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 101px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 352px;
+    border-radius: 10px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.small-round-button-mobile {
+    position: fixed;
+    right: 16px;
+    bottom: 32px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.add-contact-button-mobile {
+    display: none;
+}
+
+.contacts-more-button {
+    display: none;
+}
+
+#contact-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 28px;
+    margin-top: 88px;
+    padding: 0 24px 32px;
+}
+
+.contact-letter {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 17px 36px;
+}
+
+.contacts-separator-container {
+    padding: 8px 0;
+}
+
+.contacts-separator-container hr {
+    border: 1px solid #D1D1D1;
+}
+
+.contact-in-list {
+    display: flex;
+    gap: 35px;
+    padding: 15px 24px;
+    border-radius: 10px;
+}
+
+.contact-in-list:hover {
+    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+}
+
+.contact-in-list-active {
+    color: #FFFFFF;
+    background: var(--color-menu-hover);
+    pointer-events: none;
+}
+
+.contact-initial-avatar-small {
+    color: #FFFFFF;
+    height: 42px;
+    min-width: 42px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    border-radius: 50%;
+}
+
+.contact-in-list-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 24px;
+}
+
+.contacts-right-side-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.contacts-header {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 27px;
+    margin-bottom: 56px;
+}
+
+.contacts-header-separator-horizontal {
+    font-size: 60px;
+    color: var(--color-accent);
+}
+
+.contacts-header-separator-vertical {
+    display: none;
+    width: 90px;
+    border: 3px solid var(--color-accent);
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.pop-up-separator {
+    display: block;
+}
+
+.contact-initial-avatar-large {
+    color: #FFFFFF;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 47px;
+    font-weight: 500;
+    border-radius: 50%;
+}
+
+#contact-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    padding-bottom: 21px;
+}
+
+.contact-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+}
+
+.contact-name-and-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-name-and-buttons-container h3 {
+    font-size: 47px;
+    margin: 0;
+}
+
+.contact-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    color: var(--color-accent);
+    fill: var(--color-accent);
+    font-weight: 700;
+}
+
+.contact-button:hover .contact-button-icon {
+    fill: var(--color-accent);
+}
+
+.contact-button-icon {
+    fill: #2A3647;
+}
+
+.contact-information-heading {
+    height: 74px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-information-facts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact-information-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-information-fact-heading {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.edit-add-contact-pop-up-content {
+    display: flex;
+    gap: 72px;
+}
+
+.contact-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contact-pop-up-buttons-container {
+    display: flex;
+    gap: 25px;
+    margin-left: 96px;
+}
+
+.very-large-pop-up {
+    height: 594px;
+    border-radius: 30px;
+    max-height: 98%;
+    overflow-y: auto;
+}
+
+.edit-add-contact-pop-up-container {
+    display: flex;
+    align-items: center;
+}
+
+.edit-add-contact-pop-up-left-side {
+    height: 100%;
+    background-color: var(--color-menu);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+    padding: 0 46px;
+    gap: 32px;
+}
+
+.edit-add-contact-pop-up-left-side img {
+    width: 54px;
+}
+
+.edit-add-contact-pop-up-right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 97px;
+    padding-right: 48px;
+    gap: 48px;
+}
+
+.cancel-button-icon {
+    stroke: var(--color-menu);
+}
+
+#cancel-button:hover .cancel-button-icon {
+    stroke: var(--color-accent);
+}
+
+.close-edit-add-contact-pop-up-icon {
+    fill: var(--color-menu-active);
+    z-index: 3;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+}
+
+#back-link {
+    position: absolute;
+    display: none;
+    top: 128px;
+    right: 16px;
+}
+
+#contacts-more-menu {
+    background-color: white;
+    border-radius: 20px 20px 0 20px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    bottom: 16px;
+    right: -120px;
+    z-index: 5;
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.animate-more-menu-in {
+    animation: fade-in 225ms ease-in-out forwards;
+}
+
+.animate-more-menu-out {
+    animation: fade-out 225ms ease-in-out forwards;
+}
+
+#contacts-more-menu > button {
+    cursor: pointer;
+    border: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-menu);
+    background-color: transparent;
+    padding: 8px;
+}
+
+#contacts-more-menu > button > svg {
+    width: 24px;
+    height: 24px;
+}
+
+#overlay-more-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+}

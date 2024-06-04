@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Board</title>
+    <link rel="shortcut icon" href="assets/img/dark-logo.svg" type="image/x-icon" id="favicon-icon" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/add-task-popup.css">
+    <link rel="stylesheet" href="css/add-task.css">
+    <link rel="stylesheet" href="css/add-task-responsive.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/board-part2-responsive.css">
+    <link rel="stylesheet" href="css/priority-buttons.css">
+    <script src="js/script.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/edit-add-task-templates.js"></script>
+    <script src="js/board-templates.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/popups.js"></script>
+    <script src="js/subtasks.js"></script>
+    <script src="js/addtask.js"></script>
+    <script src="js/edittask.js"></script>
+    <script src="js/search.js"></script>
+</head>
+<body class="mobile-landscape-overlay" onload="initBoard()">
+    <div id="mobile-landscape-overlay">
+        <p>Please turn your device...</p>
+    </div>
+    <div class="outer-container mobile-landscape-outer-container">
+        <nav id="mobile-menu" w3-include-html="assets/templates/mobile-menu.html"></nav>
+        <nav id="desktop-menu" w3-include-html="assets/templates/desktop-menu.html"></nav>
+        <div id="pop-up-container" class="pop-up-container" onclick="removePopups()">
+            <div id="add-task-pop-up" class="add-task-pop-up pop-up" onclick="closeAssignedToList() | doNotClose(event)">
+                <div class="add-task-pop-up-wrapper">
+                    <div w3-include-html="assets/templates/add-task-template.html"></div>
+                    <img class="close-pop-up-icon close-add-task-pop-up-icon" src="assets/img/close-pop-up-icon.svg" alt="close pop-up icon" onclick="removeAddTaskPopup()">
+                </div>
+            </div>
+            <div id="open-task-pop-up" class="medium-pop-up pop-up" onclick="doNotClose(event)"></div>
+            <div id="move-task-pop-up" class="medium-pop-up pop-up" onclick="doNotClose(event)">
+                <div class="move-task-pop-up-header">
+                    <h2>Move Task</h2>
+                    <img class="close-pop-up-icon" src="assets/img/close-pop-up-icon.svg" alt="close pop-up icon" onclick="removePopup('move-task-pop-up')">
+                </div>
+                <button class="button dark-button button-padding-size1" onclick="moveTaskFromPopup('To do')">To "To do"</button>
+                <button class="button dark-button button-padding-size1" onclick="moveTaskFromPopup('In progress')">To "In progress"</button>
+                <button class="button dark-button button-padding-size1" onclick="moveTaskFromPopup('Await feedback')">To "Await feedback"</button>
+                <button class="button dark-button button-padding-size1" onclick="moveTaskFromPopup('Done')">To "Done"</button>
+            </div>
+        </div>
+        <div id="main">
+            <header w3-include-html="assets/templates/header.html"></header>
+                <div class="board-top-container">
+                    <div class="page-heading-and-mobile-button-container">
+                        <h2>Board</h2>
+                        <button class="button dark-button button-padding-size4 add-task-button-tablet" onclick="openAddTaskPopup('To do')">Add task <img class="button dark-button-icon" src="assets/img/add.svg" alt="add-icon"></button>
+                        <div class="button dark-button large-board-add-task-button-mobile-container" onclick="openAddTaskPopup('To do')">
+                            <img class="large-board-add-task-button-mobile" src="assets/img/large-board-add-task-button-mobile.svg" alt="add-task button">
+                        </div>
+                    </div>
+                    <div class="board-actions-container">
+                        <div class="board-search-input-container">
+                            <form onsubmit="return false">
+                                <input id="board-search-input" class="input input-padding-size3 input-padding-icon" type="text" placeholder="Find Task" maxlength="32" oninput="searchTasks()">
+                            </form>
+                            <img class="input-icon" src="assets/img/search-icon.svg" alt="search icon">
+                        </div>
+                        <button class="button dark-button button-padding-size4 add-task-button-desktop" onclick="openAddTaskPopup('To do')">Add task <img class="button dark-button-icon" src="assets/img/add.svg" alt="add-icon"></button>
+                    </div>
+                    <div id="board-column-headers-container-desktop" class="board-columns-container">
+                        <div class="board-column">
+                            <div class="board-column-header">
+                                <h3 class="board-column-heading-desktop">To do</h3>
+                                <img class="cursor-pointer" src="assets/img/small-board-add-task-button.svg" alt="add-task button" onclick="openAddTaskPopup('To do')">
+                            </div>
+                        </div>
+                        <div class="board-column">
+                            <div class="board-column-header">
+                                <h3 class="board-column-heading-desktop">In progress</h3>
+                                <img class="cursor-pointer" src="assets/img/small-board-add-task-button.svg" alt="add-task button" onclick="openAddTaskPopup('In progress')">
+                            </div>
+                        </div>
+                        <div class="board-column">
+                            <div class="board-column-header">
+                                <h3 class="board-column-heading-desktop">Await feedback</h3>
+                                <img class="cursor-pointer" src="assets/img/small-board-add-task-button.svg" alt="add-task button" onclick="openAddTaskPopup('Await feedback')">
+                            </div>
+                        </div>
+                        <div class="board-column">
+                            <div class="board-column-header">
+                                <h3 class="board-column-heading-desktop">Done</h3>
+                                <img class="cursor-pointer" src="assets/img/small-board-add-task-button.svg" alt="add-task button" onclick="openAddTaskPopup('Done')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="no-results">Keine Treffer gefunden</div>
+                <div id="board-columns-container" class="board-columns-container">
+                    <div class="board-column">
+                        <div class="board-column-header board-column-header-mobile">
+                            <h3 class="board-column-heading-mobile">To do</h3>
+                            <img class="cursor-pointer" src="assets/img/small-board-add-task-button-mobile.svg" alt="add-task button" onclick="openAddTaskPopup('To do')">
+                        </div>
+                        <div id="to-do" class="board-column-tasks-container" ondrop="dropTaskInArea('to-do', 'To do')" ondragover="allowTaskDrop(event); highlightArea('to-do')" ondragleave="stopHighlightingArea('to-do')"></div>
+                    </div>
+                    <div class="board-column">
+                        <div class="board-column-header board-column-header-mobile">
+                            <h3 class="board-column-heading-mobile">In progress</h3>
+                            <img class="cursor-pointer" src="assets/img/small-board-add-task-button-mobile.svg" alt="add-task button" onclick="openAddTaskPopup('In progress')">
+                        </div>
+                        <div id="in-progress" class="board-column-tasks-container" ondrop="dropTaskInArea('in-progress', 'In progress')" ondragover="allowTaskDrop(event); highlightArea('in-progress')" ondragleave="stopHighlightingArea('in-progress')"></div>
+                    </div>
+                    <div class="board-column">
+                        <div class="board-column-header board-column-header-mobile">
+                            <h3 class="board-column-heading-mobile">Await feedback</h3>
+                            <img class="cursor-pointer" src="assets/img/small-board-add-task-button-mobile.svg" alt="add-task button" onclick="openAddTaskPopup('Await feedback')">
+                        </div>
+                        <div id="await-feedback" class="board-column-tasks-container" ondrop="dropTaskInArea('await-feedback', 'Await feedback')" ondragover="allowTaskDrop(event); highlightArea('await-feedback')" ondragleave="stopHighlightingArea('await-feedback')"></div>
+                    </div>
+                    <div class="board-column">
+                        <div class="board-column-header board-column-header-mobile">
+                            <h3 class="board-column-heading-mobile">Done</h3>
+                            <img class="cursor-pointer" src="assets/img/small-board-add-task-button-mobile.svg" alt="add-task button" onclick="openAddTaskPopup('Done')">
+                        </div>
+                        <div id="done" class="board-column-tasks-container" ondrop="dropTaskInArea('done', 'Done')" ondragover="allowTaskDrop(event); highlightArea('done')" ondragleave="stopHighlightingArea('done')"></div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

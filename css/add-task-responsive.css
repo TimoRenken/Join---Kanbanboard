@@ -1,0 +1,152 @@
+@media(max-width: 1336px) {
+    .add-task-headline {
+        margin-top: 0;
+    }
+
+    .add-task-vector {
+        display: none;
+    }
+
+    .formular {
+        flex-direction: column;
+        max-width: 440px;
+        gap: 16px;
+    }
+
+    .under-form {
+        display: block;
+        min-width: 440px;
+        margin-top: 96px;
+    }
+
+    .add-task-submit-buttons {
+        margin-top: 16px;
+        margin-left: 0;
+        gap: 16px;
+    }
+
+    .this-field-is-required {
+        margin-top: 32px;
+    }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: unset;
+    }
+
+    .add-task-pop-up {
+        overflow-y: auto;
+        padding: 48px 25px 32px 25px;
+        width: unset !important;
+        height: 98% !important;
+    }
+
+    .open-add-task-pop-up {
+        display: block !important;
+    }
+
+    #add-task-form {
+        flex-wrap: nowrap;
+    }
+
+    #add-task-pop-up {
+        max-height: unset;
+    }
+    .positioning-input{
+        gap: 24px;
+    }
+}
+
+@media(max-width: 920px){
+    .this-field-is-required {
+        margin-top: -24px;
+    }
+
+    .add-task-headline {
+        margin-bottom: 16px;
+    }
+
+    .add-task-submit-buttons {
+        margin-bottom: 96px;
+    }
+
+    .subtasks{
+        position: relative !important;
+        margin-top: 0 !important;
+        max-height: 104px !important;
+    }
+    .under-form{
+        margin-top: 40px;
+    }
+}
+
+@media(max-width: 460px) {
+    .content-container {
+        display: block;
+    }
+
+    .add-task-headline {
+        margin-bottom: 16px;
+    }
+
+    #input-title {
+        width: 100%;
+    }
+
+    #input-description {
+        width: 100%;
+    }
+
+    #add-task-drop-down-input {
+        width: 100%;
+    }
+
+    #input-assigned-to {
+        width: 100%;
+    }
+
+    #input-due-date {
+        width: 100%;
+    }
+
+    .add-task-priority {
+        width: 100%;
+    }
+
+    #input-category {
+        width: 100%;
+    }
+
+    #add-task-subtask-input {
+        width: 100%;
+    }
+
+    .add-task-user-dropdown {
+        width: 100%;
+    }
+
+    .create-task {
+        width: 160px;
+    }
+
+    .add-task-pop-up {
+        display: block !important;
+        width: 98% !important;
+    }
+
+    .under-form {
+        min-width: unset;
+    }
+
+    .this-field-is-required {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 360px){
+    .create-task {
+        width: 136px;
+    }
+}

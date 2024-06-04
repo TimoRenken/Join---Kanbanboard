@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join - Summary</title>
+    <link rel="shortcut icon" href="assets/img/dark-logo.svg" type="image/x-icon" id="favicon-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/summary.css" />
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/summary.js"></script>
+    <script src="js/summary-greet.js"></script>
+  </head>
+  <body class="mobile-landscape-overlay" onload="initSummary()" onresize="checkWindowWidth()">
+    <div id="mobile-landscape-overlay">
+      <p>Please turn your device..</p>
+    </div>
+    <div id="summary-overlay"></div>
+        <div class="outer-container mobile-landscape-outer-container">
+        <nav
+        id="mobile-menu"
+        w3-include-html="assets/templates/mobile-menu.html"
+      ></nav>
+      <nav
+        id="desktop-menu"
+        w3-include-html="assets/templates/desktop-menu.html"
+      ></nav>
+        <div id="main">
+        <header w3-include-html="assets/templates/header.html"></header>
+        <div class="content-container">
+          <div class="summary-header">
+            <h2>Join 360</h2>
+            <span class="summary-header-seperator-horizontal">|</span>
+            <span>Key Metrics at a Glance</span>
+            <div class="summary-header-seperator-vertical"></div>
+          </div>
+          <div class="summary-content">
+            <div class="summary-overview-container">
+              <section class="summary-overview-container-section">
+                <a
+                  id="summary-to-do-button"
+                  class="flex-center summary-button summary-left-button"
+                  href="board.html"
+                >
+                  <div class="summary-status-icon-box flex-center">
+                    <img
+                      class="summary-status-icon"
+                      src="assets/img/summary-edit.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <p id="summary-to-do-amount" class="summary-amount"></p>
+                    <p>To-do</p>
+                  </div>
+                </a>
+                <a 
+                  class="flex-center summary-button summary-right-button"
+                  href="board.html"
+                >
+                  <div class="summary-status-icon-box flex-center">
+                    <img
+                      class="summary-status-icon hook-icon"
+                      src="assets/img/summary-hook.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <p id="summary-done-amount" class="summary-amount"></p>
+                    <p>Done</p>
+                  </div>
+                </a>
+              </section>
+
+              <a
+                id="summary-priority-button"
+                class="summary-overview-container-section summary-button"
+                href="board.html"
+                >
+                <div class="flex-center summary-priority-box">
+                  <div id="summary-priority-icon-box">
+                    <img id="summary-priority-icon" src="" alt="">
+                  </div>
+                  <div>
+                    <p id="summary-priority-amount" class="summary-amount"></p>
+                    <p id="summary-priority-value"></p>
+                  </div>
+                </div>
+                <div class="flex-center summary-overview-seperator"></div>
+                <div class="flex-center">
+                  <div class="summary-deadline">
+                    <p id="summary-due-date"></p>
+                    <p id="summary-due-date-text">Upcoming Deadline</p>
+                  </div>
+                </div>
+              </a>
+
+              <section class="summary-overview-container-section">
+                <a
+                  class="flex-center column no-gap summary-button summary-left-button"
+                  href="board.html"
+                >
+                  <p id="summary-tasks-amount" class="summary-amount"></p>
+                  <p>Tasks&nbsp;In<br>Board</p>
+                </a>
+                <a 
+                  class="flex-center column no-gap summary-button"
+                  href="board.html"
+                >
+                  <p id="summary-in-progress-amount" class="summary-amount"></p>
+                  <p>Tasks&nbsp;In<br>Progress</p>
+                </a>
+                <a
+                  class="flex-center column no-gap summary-button summary-right-button"
+                  href="board.html"
+                >
+                  <p id="summary-await-feedback-amount" class="summary-amount"></p>
+                  <p>Awaiting<br>Feedback</p>
+                </a>
+              </section>
+            </div>
+            <div id="summary-greeting-box">
+              <p id="summary-greeting">Good morning<span id="summary-greeting-punctuation-mark">,</span></p>
+              <p id="summary-greeting-name">Sofia Müller</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
